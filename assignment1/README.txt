@@ -66,8 +66,3 @@ Second, it using KMP to search the pattern and find the secret message.
 Finally, by matching answer_dic we can get the last message.
 
 ============================================================================================================
-
-
-
-
-
