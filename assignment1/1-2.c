@@ -35,6 +35,7 @@ void kmpMatch(char *cipherTextfive, char *article){
             if(j == (5 - 1)) {
                 article_indexes[article_index_idx++] = i - 5 + sumofLps + 1;
                 j = failure[j];
+                
             }
             else 
                 j++;
