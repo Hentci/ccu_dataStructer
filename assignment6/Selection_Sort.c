@@ -3,6 +3,11 @@
 #define mxn (int)1e6
 char s[mxn];
 int arr[mxn],arrSize;
+/**********
+* s: to store the input which is ready to be process into integer
+* arr: after the string process, all integers are stored into this array
+* arrSize: the size of arr
+***********/
 void swap(int *a, int *b){
     int t = *a;
     *a = *b;
@@ -20,14 +25,19 @@ void printArray(int arr[],int sz){
 
 void selectionSort(int arr[],int sz){
     int mn;
-    for(int i = 0;i<= sz - 2;i++){
+    for(int i = 0;i< sz;i++){
+        // set the first element to the minimum of the subarray
         mn = i;
-        for(int j = i + 1;j<= sz - 1;j++)
+        // find the minimum of the subarray
+        for(int j = i + 1;j< sz + 1;j++)
             mn = arr[j] < arr[mn] ? j : mn;
+        // swap the minimum to the start of subarray
         swap(&arr[i], &arr[mn]);
+        // print the process
         printArray(arr, arrSize);
     }
 }
+
 int main(){
     // freopen("input.txt","r",stdin);
     fgets(s, mxn, stdin);
@@ -42,8 +52,8 @@ int main(){
         arr[arrSize++] = element;
         token = strtok(NULL, comma);
     }
-    selectionSort(arr, arrSize);
-
+    // selection sort
+    selectionSort(arr, arrSize - 1);
 
     return 0;
 }
